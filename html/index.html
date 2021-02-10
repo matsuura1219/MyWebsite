@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--言語を設定します-->
+<html lang="ja">
+
+<!--webサイトの設定を行うヘッダー部です-->
+
+<head>
+    <!--文字コードの設定をします-->
+    <meta charset="utf-8">
+    <!--タブに表示するタイトルを設定します-->
+    <title>YUKI MATSUUAR official website</title>
+    <!--検索結果一覧画面に表示する文章を設定します-->
+    <meta name="description" content="ITエンジニア・松浦裕久のオフィシャルサイトです。松浦裕久に関する情報はこちらから。">
+    <!--スマホに対応するためにviewportを設定します-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--cssのインポートをします-->
+    <link rel="stylesheet" href="../css/style.css">
+    <!--Swiperライブラリを使用するためのスタイルシートをインポートします-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+    <!--フォントのインポートを行います-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<!--webサイトの表示を行うボディ部です-->
+
+<body>
+
+    <!--文章の導入部分やナビゲーション（目次）を入れる要素です-->
+    <!--サイトのメインタイトルやロゴ、検索窓などが含まれます-->
+
+    <header>
+
+        <!--ハンバーガーメニュー-->
+        <div class="menu_icon">
+            <div class="menu_bar menu_bar1"></div>
+            <div class="menu_bar menu_bar2"></div>
+            <div class="menu_bar menu_bar3"></div>
+        </div>
+
+    </header>
+
+    <!--文章のメインとなるコンテンツをいれる要素です-->
+    <!--そのページ内だけで使用される文章が含まれます-->
+
+    <main>
+        <!--オーバーレイ表示する箇所(各ページのナビゲーションを行います)-->
+        <div class="overlay">
+            <p id="home">HOME</p>
+            <p id="about">ABOUT</p>
+            <p id="research">RESEARCH</p>
+            <p id="profile">PROFILE</p>
+            <p id="portfolio">PORTFOLIO</p>
+        </div>
+
+        <!--最初に表示する画面-->
+        <div class="opening">
+            <!--アニメーション文字-->
+            <p id="typewriter"></p>
+        </div>
+
+        <!-- Swiper START -->
+        <div class="swiper-container">
+            <!-- メイン表示部分 -->
+
+            <div class="swiper-wrapper">
+                <!-- 各スライドを記載します -->
+
+                <!--HOME-->
+                <div class="swiper-slide">
+
+                    <video src="../movie/sample.mp4" loop autoplay muted></video>
+                    <div id="top_message">
+                        <p id="official_website">OFFICIAL WEBSITE</p>
+                        <p id="my_name">Y&nbsp;&nbsp;U&nbsp;&nbsp;K&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;A&nbsp;&nbsp;T&nbsp;&nbsp;S&nbsp;&nbsp;U&nbsp;&nbsp;U&nbsp;&nbsp;R&nbsp;&nbsp;A</p>
+                    </div>
+
+                </div>
+
+                <!--ABOUT-->
+                <div class="swiper-slide">
+                    <img src="../img/uww2019.JPG">
+                    <p class="sub_title">A&nbsp;B&nbsp;O&nbsp;U&nbsp;T</p>
+
+                    <!--詳細画面へ遷移するためのボタン-->
+                    <div class="button btn_profile">
+                        <a class="btn btn-border">&nbsp;&nbsp;&nbsp;M&nbsp;O&nbsp;R&nbsp;E&nbsp;&nbsp;&nbsp;</a>
+                    </div>
+
+                    <!--詳細画面-->
+                    <div class="detail_fadein" id="detail_about">
+                        <div class="detail_content">
+                            <div class="close">
+                                <div class="close_bar1"></div>
+                                <div class="close_bar2"></div>
+                            </div>
+
+                            <div class="content">
+                                <br>
+                                <h1>A&nbsp;B&nbsp;O&nbsp;U&nbsp;T</h1>
+                                <br>
+                                <div class="text_area">
+                                    <img src="../img/uww2019.JPG">
+                                    <br><br>
+                                    <h2>[ご挨拶]</h2>
+                                    <p>みなさん、初めまして。松浦裕久です。某IT企業にて、ITエンジニアとして、修行をしております。突然、自分のWebSiteが欲しいと思い、制作しました。まだ、エンジニアとしても、デザイナーとしても、未熟ですが、 これからも鍛錬していこうと思っています。
+                                    </p>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--PROFILE-->
+                <div class="swiper-slide">
+                    <img src="../img/uww2019.JPG">
+                    <!-- <p class="sub_title">Y&nbsp;U&nbsp;K&nbsp;I&nbsp;&nbsp;M&nbsp;A&nbsp;T&nbsp;S&nbsp;U&nbsp;U&nbsp;R&nbsp;A</p> -->
+                    <p class="sub_title">P&nbsp;R&nbsp;O&nbsp;F&nbsp;I&nbsp;L&nbsp;E</p>
+
+                    <!--詳細画面へ遷移するためのボタン-->
+                    <div class="button btn_profile">
+                        <a class="btn btn-border">&nbsp;&nbsp;&nbsp;M&nbsp;O&nbsp;R&nbsp;E&nbsp;&nbsp;&nbsp;</a>
+                    </div>
+
+                    <!--詳細画面-->
+                    <div class="detail_fadein" id="detail_profile">
+                        <div class="detail_content">
+                            <div class="close">
+                                <div class="close_bar1"></div>
+                                <div class="close_bar2"></div>
+                            </div>
+
+                            <div class="content">
+                                <br>
+                                <h1>P&nbsp;R&nbsp;O&nbsp;F&nbsp;I&nbsp;L&nbsp;E</h1>
+                                <br>
+                                <div class="text_area">
+                                    <img src="../img/uww2019.JPG">
+                                    <br><br>
+                                    <h2>松浦　裕久</h2>
+                                    <p>生年月日：1995年12月19日</p>
+                                    <p>出身地：広島県</p>
+                                    <p>血液型：O型</p>
+                                    <br>
+                                    <h2>Yuki Matsuura</h2>
+                                    <p>Birthday：19 Decembar 1995</p>
+                                    <p>出身地：Hiroshima, Japan</p>
+                                    <p>Blood Type：O</p>
+                                    <br>
+                                    <h2>[年表]</h2>
+                                    <p>1995.12.19&nbsp;大阪府東大阪市に誕生</p>
+                                    <p>2003.4.1&nbsp;福山市立緑ヶ丘小学校に入学</p>
+                                    <p>2008.4.1&nbsp;学校法人 盈進学園に入学</p>
+                                    <p>2011.4.1&nbsp;広島県立福山誠之館高等学校に入学</p>
+                                    <p>2014.4.1&nbsp;神戸大学 電気電子工学科に入学</p>
+                                    <p>2018.4.1&nbsp;神戸大学大学院 電気電子工学専攻に入学</p>
+                                    <p>2020.4.1&nbsp;某IT企業にITエンジニアとして就職</p>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!--RESEARCH-->
+                <div class="swiper-slide">
+                    <img src="../img/uww2019.JPG">
+                    <p class="sub_title">R&nbsp;E&nbsp;S&nbsp;E&nbsp;A&nbsp;R&nbsp;C&nbsp;H</p>
+
+                    <!--詳細画面へ遷移するためのボタン-->
+                    <div class="button btn_research">
+                        <a class="btn btn-border">&nbsp;&nbsp;&nbsp;M&nbsp;O&nbsp;R&nbsp;E&nbsp;&nbsp;&nbsp;</a>
+                    </div>
+
+                    <!--詳細画面-->
+                    <div class="detail_fadein" id="detail_research">
+                        <div class="detail_content">
+                            <div class="close">
+                                <div class="close_bar1"></div>
+                                <div class="close_bar2"></div>
+                            </div>
+
+                            <div class="content">
+                                <br>
+                                <h1>R&nbsp;E&nbsp;S&nbsp;E&nbsp;A&nbsp;R&nbsp;C&nbsp;H</h1>
+                                <br>
+                                <div class="text_area">
+                                    <img src="../img/uww2019.JPG">
+                                    <br><br>
+                                    <h2>[研究概要]</h2>
+                                    <p>ウェアラブル・ユビキタスコンピューティング分野の研究を行っていました。
+                                        <br> 歩行中に生じる揺れを考慮した Head Mounted Display(メガネ型コンピューター)上での最適なフォントを調査し、国際学会での登壇発表や論文誌への投稿を行いました。</p>
+                                    <br>
+                                    <h2>[対外発表一覧]</h2>
+                                    <ul>
+                                        <li>松浦裕久, 磯山直也, 寺田努, 塚本昌彦: 日常動作から生じるHMD の揺れのシ ミュレーションに基づくフォントの可読性評価, ユビキタスウェアラブルワーク ショップ2017 (UWW 2017), p. 11 (Dec. 2017).</li>
+                                        <li>松浦裕久, 寺田努, 青木友裕, 園田晋, 磯山直也, 塚本昌彦: 日常動作から生じる HMD の揺れを再現したシミュレータによるフォントの可読性評価, 情報処理学 会マルチメディア, 分散, 協調とモバイルシンポジウム(DICOMO2018) 論文集, pp. 152{159 (July 2018).</li>
+                                        <li>松浦裕久, 寺田努, 青木友裕, 園田晋, 磯山直也, 塚本昌彦: 日常動作から生じる HMDの揺れを考慮したフォントの可読性・可視性の実機評価, ユビキタスウェア ラブルワークショップ2018 (UWW 2018), p. 22 (Dec. 2018).</li>
+                                        <li>松浦裕久, 寺田努, 青木友裕, 園田晋, 磯山直也, 塚本昌彦: HMD装着時の歩行に よる画面揺れを考慮したフォントの可読性・可視性の実機評価, 情報処理学会研究 報告(モバイルコンピューティングとユビキタス通信研究会), Vol. 2019-MBL-91, No. 4, pp. 1{8 (May 2019).</li>
+                                        <li>松浦裕久, 寺田努, 秋末大作, 園田晋, 磯山直也, 塚本昌彦: 歩行時のHMD の揺 れによる文字の読みづらさを緩和するための動的フォント切り替え手法, ユビキ タスウェアラブルワークショップ2019 (UWW 2019), p. 1 (Dec. 2019).</li>
+                                        <li>青木友裕, 寺田努, 松浦裕久: ウェアラブル端末でのフォントのあり方とは？, CEDEC2018 (Aug. 2018).</li>
+                                        <li>松浦裕久: 日常生活時におけるHMDの揺れを考慮したフォントの可読性・可視性 に関する実機評価, 情報処理学会UBI 研究会, 国際会議発表奨励賞(Dec. 2019).</li>
+                                        <li>松浦裕久, 寺田努, 青木友裕, 園田晋, 磯山直也, 塚本昌彦: 日常生活時における HMDの揺れを考慮したフォントの可読性・可視性に関する実機評価, 情報処理学 会インタラクション2019, pp. 685-686 (Mar. 2019).</li>
+                                        <li>Y. Matsuura, T. Terada, T. Aoki, S. Sonoda, N. Isoyama, and M. Tsukamoto: Readability and Legibility of Fonts Considering Shakiness of Head Mounted Dis- plays, Proc. of the 23rd International Symposium on Wearable
+                                            Computers (ISWC 2019), pp. 150{159 (Sep. 2019).</li>
+                                    </ul>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--PORTFOLIO-->
+                <div class="swiper-slide">
+                    <img src="../img/uww2019.JPG">
+                    <p class="sub_title">P&nbsp;O&nbsp;R&nbsp;T&nbsp;F&nbsp;O&nbsp;L&nbsp;I&nbsp;O</p>
+
+                    <!--詳細画面へ遷移するためのボタン-->
+                    <div class="button btn_research">
+                        <a class="btn btn-border">&nbsp;&nbsp;&nbsp;M&nbsp;O&nbsp;R&nbsp;E&nbsp;&nbsp;&nbsp;</a>
+                    </div>
+
+                    <!--詳細画面-->
+                    <div class="detail_fadein" id="detail_portfolio">
+                        <div class="detail_content">
+                            <div class="close">
+                                <div class="close_bar1"></div>
+                                <div class="close_bar2"></div>
+                            </div>
+
+                            <div class="content">
+                                <br>
+                                <h1>P&nbsp;O&nbsp;R&nbsp;T&nbsp;F&nbsp;O&nbsp;L&nbsp;I&nbsp;O</h1>
+                                <br>
+                                <div class="text_area">
+                                    <img src="../img/uww2019.JPG">
+                                    <br><br>
+                                    <h2>[AndroidOS用占いアプリ]</h2>
+                                    <p>AndroidOS向けに占いアプリFortuneAppをリリースしました。下記のURLからダウンロードできます。</p>
+                                    <p>https://play.google.com/store/apps/details?id=jp.matsuura.fortuneapp</p>
+                                    <br>
+                                    <h2>[公式LINEアカウント]</h2>
+                                    <p>LINE Messaging APIを活用したBot作成を行っております。リリースまでお待ちください。</p>
+                                    <br>
+                                    <h2>[iOS用アプリ]</h2>
+                                    <p>iOS向けアプリを2021年9月にリリース予定です。</p>
+                                    <br>
+                                    <h2>[Youtube]</h2>
+                                    <p>編集した動画を公開しています。</p>
+                                    <p>https://www.youtube.com</p>
+                                    <br>
+                                    <h2>[Githubアカウント]</h2>
+                                    <p>今まで作成したプログラミングをGithubに公開しています。</p>
+                                    <p>https://github.com/matsuura1219</p>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--左右の矢印ボタン-->
+            <div class="swiper-button-prev swiper-button-white"></div>
+            <div class="swiper-button-next swiper-button-white"></div>
+            <!--インジケータ-->
+            <div class="swiper-pagination swiper-pagination-white"></div>
+        </div>
+        <!-- Swiper END -->
+
+    </main>
+
+    <!--著作権に関する情報や、ナビゲーションなどをいれる要素です-->
+    <footer>
+
+    </footer>
+
+    <!--jQueryをCDNからインポートします-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!--Swiperライブラリをインポートします-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+    <!--文字のアニメーションのjQueryライブラリ-->
+    <script src="https://unpkg.com/ityped@1.0.3"></script>
+    <!--自作jsを実行します-->
+    <script type="text/javascript" src="../js/script.js"></script>
+
+</body>
+
+</html>

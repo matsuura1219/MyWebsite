@@ -1,0 +1,485 @@
+/* 外枠に余白ができるのを防ぐため */
+
+
+/* タグ */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* Google Chrome用 - スクロールバー非表示 */
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* IE,Edge用 - スクロールバー非表示 */
+
+body {
+    -ms-overflow-style: none;
+}
+
+
+/* Safai用 - スクロールバー非表示 */
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* mainタグ */
+
+main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* imgタグ */
+
+img {
+    width: 100%;
+    height: 100%;
+    /* 中央でトリミング */
+    object-fit: cover;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    /* 中央でトリミング */
+    object-fit: cover;
+}
+
+
+/* オーバーレイ用 START */
+
+.overlay p {
+    color: #ffffff;
+    font-size: 40px;
+    cursor: pointer;
+    font-family: 'Spectral', serif;
+    text-align: center;
+}
+
+.overlay_txt {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+
+/* オーバーレイ用 END */
+
+
+/* ABOUT - START */
+
+#top_message {
+    position: absolute;
+    bottom: 25%;
+    width: 100%;
+    text-align: center;
+    font-family: 'Spectral', serif;
+    color: white;
+}
+
+#official_website {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 35px;
+}
+
+#my_name {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: auto;
+    font-size: 65px;
+}
+
+
+/* ABOUT - END */
+
+
+/* PROFILE - START */
+
+#top_message {
+    position: absolute;
+    bottom: 25%;
+    width: 100%;
+    text-align: center;
+    font-family: 'Spectral', serif;
+    color: white;
+}
+
+#official_website {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 35px;
+}
+
+#my_name {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: auto;
+    font-size: 65px;
+}
+
+
+/* PROFILE - END */
+
+
+/* オープニング用 - START */
+
+.opening {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    text-align: center;
+}
+
+#typewriter {
+    position: relative;
+    height: 50px;
+    color: white;
+    font-family: 'Spectral', serif;
+    font-size: 40px;
+}
+
+.fadeout {
+    opacity: 0;
+    /* アニメーションの時間 */
+    transition: all 0.8s;
+}
+
+
+/* オープニング用 - END */
+
+
+/* ナビゲーション用 - START */
+
+#navigation {
+    /* テキストの左にある黒い点を削除します */
+    /* floatを使う場合、最上位タグでｍ、marginのオートとwidthをliの幅に併せて設定する必要があります */
+    list-style: none;
+    /* 親要素の幅-指定した要素の幅を算出し、適用されます */
+    margin: auto;
+    /* liの横幅×表示させる数 */
+    width: 900px;
+}
+
+#navigation li {
+    /* 各listの横幅 */
+    width: 180px;
+    text-align: center;
+    /* 回り込み（オブジェクトの右側に並べていく） */
+    float: left;
+}
+
+#navigation li a {
+    /* テキストの下線部を削除します */
+    text-decoration: none;
+    /* テキストの色 */
+    color: white;
+    font-size: 205px;
+    font-family: 'Spectral', serif;
+}
+
+
+/* ナビゲーション用 - END */
+
+
+/* 共通用 */
+
+.sub_title {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 50px;
+    font-family: 'Spectral', serif;
+}
+
+
+/* 詳細ボタンの全体レイアウト */
+
+.button {
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: 'Spectral', serif;
+}
+
+
+/* 詳細ボタンの形状 */
+
+a.btn-border {
+    border: 1px solid #fff;
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 3px;
+    color: #000;
+    transition: 0.5s;
+}
+
+
+/* 詳細ボタンのマウスオーバーの際の設定 */
+
+a.btn-border:hover {
+    color: #000;
+    background: #fff;
+}
+
+
+/* 詳細ボタンを押下した際に表示するオーバーレイ */
+
+.detail_fadein {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s linear;
+    transform: translateY(-100%);
+}
+
+
+/* 詳細ボタンを押下した際に表示するオーバーレイ（実際に表示するときの設定） */
+
+.detail_fadein.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* 詳細画面のレイアウト設定 */
+
+.detail_content {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background-color: aqua;
+    overflow-y: scroll;
+}
+
+
+/* スクロールバーの議事要素 */
+
+.detail_content::-webkit-scrollbar {
+    /* スクロールバーを非表示にします */
+    width: 0px;
+}
+
+
+/* 閉じるボタンの設定 */
+
+.close {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 15px;
+    right: 15px;
+    z-index: 2000;
+    cursor: pointer;
+}
+
+.close_bar1 {
+    position: absolute;
+    top: 10px;
+    width: 40px;
+    height: 2px;
+    background-color: rgb(255, 255, 255, 1);
+    -webkit-transform: rotate(45deg) scaleX(1.0);
+}
+
+.close_bar2 {
+    position: absolute;
+    top: 10px;
+    width: 40px;
+    height: 2px;
+    background-color: rgb(255, 255, 255, 1);
+    -webkit-transform: rotate(-45deg) scaleX(1.0);
+}
+
+.content {
+    color: #000;
+    font-family: 'Spectral', serif;
+}
+
+.content h1 {
+    font-size: 35px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.content h2 {
+    font-size: 24px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.content p {
+    font-size: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.text_area {
+    position: relative;
+    top: 0px;
+    left: 20%;
+    width: 60%;
+    text-align: left;
+}
+
+.text_area ul {
+    font-size: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+/* 共通用 -END  */
+
+
+/* Swiper用 - START */
+
+.swiper-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+
+/* Swiper用 - END */
+
+
+/* オーバーレイ用 - START */
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.7);
+    z-index: 100;
+    visibility: hidden;
+}
+
+.overlay_off {
+    visibility: visible;
+    /* アニメーションの時間 */
+}
+
+
+/* オーバーレイ用 - END */
+
+
+/* ハンバーガーメニュー用 - START */
+
+.menu_icon {
+    /* アイコン全体の幅 */
+    width: 50px;
+    /* アイコン全体の高さ */
+    height: 50px;
+    /* 位置を一定にします */
+    position: fixed;
+    /* topと画面の距離を設定します */
+    top: 10px;
+    /* rightと画面の距離を設定します */
+    right: 20px;
+    /* カーソルを置いたときに、マウス表示を変更します*/
+    cursor: pointer;
+    /* opacityを活用すると子要素にも影響を与えるため、rgbを使う */
+    background: rgb(255, 255, 255, 0);
+    z-index: 600;
+}
+
+.menu_bar {
+    /* バーそれぞれの幅 */
+    width: 36px;
+    /* バーそれぞれの高さ */
+    height: 2px;
+    /* 位置をmenu_icon内での絶対位置として定義します */
+    position: absolute;
+    /* アニメーションの時間 */
+    transition: all 0.3s;
+    opacity: 1;
+}
+
+.menu_bar1 {
+    /* menu_iconからのtop_marginを設定します */
+    /* バーの色 */
+    background: white;
+    margin-top: 10px;
+    margin-left: 7px;
+}
+
+.menu_bar2 {
+    /* menu_iconからのtop_marginを設定します */
+    /* バーの色 */
+    background-color: white;
+    margin-top: 24px;
+    margin-left: 7px;
+}
+
+.menu_bar3 {
+    /* menu_iconからのtop_marginを設定します */
+    /* バーの色 */
+    background-color: white;
+    margin-top: 38px;
+    margin-left: 7px;
+}
+
+.menu_bar1_active {
+    -webkit-transform: rotate(45deg) scaleX(1.0);
+    margin-top: 25px;
+}
+
+.menu_bar2_active {
+    opacity: 0;
+}
+
+.menu_bar3_active {
+    -webkit-transform: rotate(-45deg) scaleX(1.0);
+    margin-top: 25px;
+}
+
+
+/* ハンバーガーメニュー用 - END */

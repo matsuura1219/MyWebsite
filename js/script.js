@@ -8,6 +8,8 @@ var menu_icon = document.getElementsByClassName("menu_icon")[0];
 var body = document.getElementsByTagName("body")[0];
 //overlay
 var overrlay = document.getElementsByClassName("overlay")[0];
+//矢印アイコン
+var arrows = document.getElementsByClassName("arrow-button");
 
 //各menu_bar
 var menu_bar1 = document.getElementsByClassName("menu_bar1")[0];
@@ -45,7 +47,7 @@ var detail_page = document.getElementsByClassName("detail_fadein");
 var open = false;
 
 //各画面における、詳細画面を開いているかを判定するフラグ
-var detail = [false, false, false, false];
+var detail = [false, false, false, false, false];
 
 //表示しているページの位置
 var current_position = 1;
@@ -97,6 +99,7 @@ var mySwiper = new Swiper('.swiper-container', {
         //前へボタンのセレクタ名
         prevEl: '.swiper-button-prev'
     },
+
     //インジケータの設定
     pagination: {
         //セレクタ名
@@ -104,7 +107,7 @@ var mySwiper = new Swiper('.swiper-container', {
         //bullets,fraction,progressbar,customeから選択可能
         type: 'bullets',
         //クリックできるかどうか
-        clickable: true
+        clickable: false
     }
 });
 
@@ -183,13 +186,18 @@ function removeOpening() {
 
 
 //詳細画面を表示にする関数です
-function showDetail(page) {
+function showDetail(page, e) {
+
+    console.log(page);
 
     if (!detail[page]) {
         //詳細画面が開いていない場合
         detail_page[page].classList.add("is-open");
 
         detail[page] = true;
+
+        on_event(page, detail_page);
+
     }
 }
 
@@ -207,6 +215,59 @@ function removeDetail(page) {
 //スワイプ時に処理する関数です
 function viewContent(position) {
     current_position = position;
+}
+
+//メニューアイコンをマウスオーバーした時の関数です
+function changeColor() {
+
+    menu_bar1.classList.add("menu_icon_animate");
+    menu_bar2.classList.add("menu_icon_animate");
+    menu_bar3.classList.add("menu_icon_animate");
+}
+
+
+//メニューアイコンからマウスが離れたときの関数です
+function restoreColor() {
+    menu_bar1.classList.remove("menu_icon_animate");
+    menu_bar2.classList.remove("menu_icon_animate");
+    menu_bar3.classList.remove("menu_icon_animate");
+}
+
+function myHandler(e) {
+    e.preventDefault();
+}
+
+function on_event(page, el) {
+    el[page].addEventListener("click", myHandler, false)
+}
+
+function off_event(page, el) {
+    el[page].removeEventListener("click", myHandler, false)
+}
+
+//詳細画面を表示する際にハンバーガーメニューと矢印アイコンを非表示にします
+function hideIcon() {
+
+    //ハンバーガーメニューを隠します
+    menu_icon.style.display = "none";
+    //矢印アイコンを隠します
+    for (let i = 0; i < 2; i++) {
+        arrows[i].style.display = "none";
+    }
+
+
+}
+
+//詳細画面を表示する際にハンバーガーメニューと矢印アイコンを表示します
+function showIcon() {
+
+
+    //ハンバーガーメニューを表示します
+    menu_icon.style.display = "block";
+    //矢印アイコンを表示します
+    for (let i = 0; i < 2; i++) {
+        arrows[i].style.display = "block";
+    }
 }
 
 /* イベント処理 */
@@ -230,6 +291,19 @@ menu_icon.addEventListener("click", function() {
     }
 
 });
+
+//menu_iconがマウスオーバーしたとき
+menu_icon.addEventListener("mouseover", () => {
+    changeColor();
+});
+
+
+//menu_iconからマウスが離れたしたとき
+menu_icon.addEventListener("mouseout", () => {
+    restoreColor();
+});
+
+
 
 //オーバーレイ(ナビゲーションあり)表示の際に、画面をクリックすると、解除します
 overrlay.addEventListener("click", function() {
@@ -291,24 +365,39 @@ portfolio.addEventListener("click", function() {
     }
 })
 
-//「MORE」ボタンを押したとき
-for (let i = 0; i < 4; i++) {
-    //console.log(btn[i]);
-    btn[i].addEventListener("click", () => {
 
+
+//「MORE」ボタンを押したとき
+for (let i = 0; i <= 4; i++) {
+
+    //console.log(btn[i]);
+    btn[i].addEventListener("click", (e) => {
+
+        off_event(i, btn);
         //home画面は「MORE」ボタンがない
         //また、1ページ目を1と定義しているため、+2する
-        showDetail(i);
+        showDetail(i, e);
 
+        ////////////////////////////////////
+        //ハンバーガーメニューを非表示にします
+        hideIcon();
+        ////////////////////////////////////
     });
 }
 
 
 //詳細画面の×ボタンを押したとき
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i <= 4; i++) {
     close_btn[i].addEventListener("click", () => {
 
+        off_event(i, close_btn);
+
         removeDetail(i);
+
+        ////////////////////////////////////
+        //ハンバーガーメニューを表示します
+        showIcon();
+        ////////////////////////////////////
     });
 }
 
@@ -326,7 +415,7 @@ window.onload = function() {
     //次のメッセージの文字数
     const message2_count = message2.length;
 
-    /*
+
 
     //本番用
 
@@ -338,18 +427,20 @@ window.onload = function() {
     const backSpeed = 80;
     //戻る際の遅延時間
     const backDelay = 150;
-    fade_out_time = 1000;
-    
+    const fade_out_time = 1000;
+
     //100msをマージンに設定しています
     //フェードアウトさせる時間
     const delay1 = startDelay + message1_count * typeSpeed + message1_count * backSpeed + backDelay + startDelay + message2_count * typeSpeed + message2_count * backSpeed + 100;
     //openingタグを削除する時間
     const delay2 = delay1 + fade_out_time;
-    */
 
+
+    /*
     //テスト用
     const delay1 = 10;
     const delay2 = 20;
+    */
 
     //フェードアウトする処理を遅延実行する
     setTimeout("removeOpening()", delay1);

@@ -12,7 +12,7 @@
     <!--検索結果一覧画面に表示する文章を設定します-->
     <meta name="description" content="ITエンジニア・松浦裕久のオフィシャルサイトです。松浦裕久に関する情報はこちらから。">
     <!--スマホに対応するためにviewportを設定します-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <!--cssのインポートをします-->
     <link rel="stylesheet" href="../css/style.css">
     <!--Swiperライブラリを使用するためのスタイルシートをインポートします-->
@@ -30,7 +30,6 @@
     <!--サイトのメインタイトルやロゴ、検索窓などが含まれます-->
 
     <header>
-
         <!--ハンバーガーメニュー-->
         <div class="menu_icon">
             <div class="menu_bar menu_bar1"></div>
@@ -44,13 +43,18 @@
     <!--そのページ内だけで使用される文章が含まれます-->
 
     <main>
+
+
+
         <!--オーバーレイ表示する箇所(各ページのナビゲーションを行います)-->
         <div class="overlay">
-            <p id="home">HOME</p>
-            <p id="about">ABOUT</p>
-            <p id="profile">PROFILE</p>
-            <p id="research">RESEARCH</p>
-            <p id="portfolio">PORTFOLIO</p>
+            <div class="container">
+                <p id="home">HOME</p>
+                <p id="about">ABOUT</p>
+                <p id="profile">PROFILE</p>
+                <p id="research">RESEARCH</p>
+                <p id="portfolio">PORTFOLIO</p>
+            </div>
         </div>
 
         <!--最初に表示する画面-->
@@ -88,7 +92,7 @@
                     </div>
 
                     <!--詳細画面-->
-                    <div class="detail_fadein" id="detail_about">
+                    <div class="detail_fadein">
                         <div class="detail_content">
                             <div class="close">
                                 <div class="close_bar1"></div>
@@ -193,20 +197,20 @@
                                     <br><br>
                                     <h2>[研究概要]</h2>
                                     <p>ウェアラブル・ユビキタスコンピューティング分野の研究を行っていました。
-                                        <br> 歩行中に生じる揺れを考慮した Head Mounted Display(メガネ型コンピューター)上での最適なフォントを調査し、国際学会での登壇発表や論文誌への投稿を行いました。</p>
+                                        <br> 歩行中に生じる揺れを考慮したHead Mounted Display上での最適なフォントを調査し、国際学会での登壇発表や論文誌への投稿を行いました。</p>
                                     <br>
                                     <h2>[対外発表一覧]</h2>
                                     <ul>
-                                        <li>松浦裕久, 磯山直也, 寺田努, 塚本昌彦: 日常動作から生じるHMD の揺れのシ ミュレーションに基づくフォントの可読性評価, ユビキタスウェアラブルワーク ショップ2017 (UWW 2017), p. 11 (Dec. 2017).</li>
-                                        <li>松浦裕久, 寺田努, 青木友裕, 園田晋, 磯山直也, 塚本昌彦: 日常動作から生じる HMD の揺れを再現したシミュレータによるフォントの可読性評価, 情報処理学 会マルチメディア, 分散, 協調とモバイルシンポジウム(DICOMO2018) 論文集, pp. 152{159 (July 2018).</li>
-                                        <li>松浦裕久, 寺田努, 青木友裕, 園田晋, 磯山直也, 塚本昌彦: 日常動作から生じる HMDの揺れを考慮したフォントの可読性・可視性の実機評価, ユビキタスウェア ラブルワークショップ2018 (UWW 2018), p. 22 (Dec. 2018).</li>
-                                        <li>松浦裕久, 寺田努, 青木友裕, 園田晋, 磯山直也, 塚本昌彦: HMD装着時の歩行に よる画面揺れを考慮したフォントの可読性・可視性の実機評価, 情報処理学会研究 報告(モバイルコンピューティングとユビキタス通信研究会), Vol. 2019-MBL-91, No. 4, pp. 1{8 (May 2019).</li>
-                                        <li>松浦裕久, 寺田努, 秋末大作, 園田晋, 磯山直也, 塚本昌彦: 歩行時のHMD の揺 れによる文字の読みづらさを緩和するための動的フォント切り替え手法, ユビキ タスウェアラブルワークショップ2019 (UWW 2019), p. 1 (Dec. 2019).</li>
+                                        <li>松浦裕久, 磯山直也, 寺田努, 塚本昌彦: 日常動作から生じるHMD の揺れのシミュレーションに基づくフォントの可読性評価, ユビキタスウェアラブルワーク ショップ2017 (UWW 2017), p. 11 (Dec. 2017).</li>
+                                        <li>松浦裕久, 寺田努, 青木友裕, 園田晋, 磯山直也, 塚本昌彦: 日常動作から生じるHMD の揺れを再現したシミュレータによるフォントの可読性評価, 情報処理学会マルチメディア, 分散, 協調とモバイルシンポジウム(DICOMO2018) 論文集, pp. 152-159 (July 2018).</li>
                                         <li>青木友裕, 寺田努, 松浦裕久: ウェアラブル端末でのフォントのあり方とは？, CEDEC2018 (Aug. 2018).</li>
-                                        <li>松浦裕久: 日常生活時におけるHMDの揺れを考慮したフォントの可読性・可視性 に関する実機評価, 情報処理学会UBI 研究会, 国際会議発表奨励賞(Dec. 2019).</li>
-                                        <li>松浦裕久, 寺田努, 青木友裕, 園田晋, 磯山直也, 塚本昌彦: 日常生活時における HMDの揺れを考慮したフォントの可読性・可視性に関する実機評価, 情報処理学 会インタラクション2019, pp. 685-686 (Mar. 2019).</li>
-                                        <li>Y. Matsuura, T. Terada, T. Aoki, S. Sonoda, N. Isoyama, and M. Tsukamoto: Readability and Legibility of Fonts Considering Shakiness of Head Mounted Dis- plays, Proc. of the 23rd International Symposium on Wearable
-                                            Computers (ISWC 2019), pp. 150{159 (Sep. 2019).</li>
+                                        <li>松浦裕久, 寺田努, 青木友裕, 園田晋, 磯山直也, 塚本昌彦: 日常動作から生じるHMDの揺れを考慮したフォントの可読性・可視性の実機評価, ユビキタスウェアラブルワークショップ2018 (UWW 2018), p. 22 (Dec. 2018).</li>
+                                        <li>松浦裕久, 寺田努, 青木友裕, 園田晋, 磯山直也, 塚本昌彦: 日常生活時におけるHMDの揺れを考慮したフォントの可読性・可視性に関する実機評価, 情報処理学会インタラクション2019, pp. 685-686 (Mar. 2019).</li>
+                                        <li>松浦裕久, 寺田努, 青木友裕, 園田晋, 磯山直也, 塚本昌彦: HMD装着時の歩行による画面揺れを考慮したフォントの可読性・可視性の実機評価, 情報処理学会研究報告(モバイルコンピューティングとユビキタス通信研究会), Vol. 2019-MBL-91, No. 4, pp. 1-8 (May 2019).</li>
+                                        <li>Y. Matsuura, T. Terada, T. Aoki, S. Sonoda, N. Isoyama, and M. Tsukamoto: Readability and Legibility of Fonts Considering Shakiness of Head Mounted Displays, Proc. of the 23rd International Symposium on Wearable
+                                            Computers (ISWC 2019), pp. 150-159 (Sep. 2019).</li>
+                                        <li>松浦裕久, 寺田努, 秋末大作, 園田晋, 磯山直也, 塚本昌彦: 歩行時のHMDの揺れによる文字の読みづらさを緩和するための動的フォント切り替え手法, ユビキタスウェアラブルワークショップ2019 (UWW 2019), p. 1 (Dec. 2019).</li>
+                                        <li>松浦裕久: 日常生活時におけるHMDの揺れを考慮したフォントの可読性・可視性に関する実機評価, 情報処理学会UBI研究会, 国際会議発表奨励賞(Dec. 2019).</li>
                                     </ul>
                                     <br>
                                     <br>
@@ -244,21 +248,24 @@
                                     <br><br>
                                     <h2>[AndroidOS用占いアプリ]</h2>
                                     <p>AndroidOS向けに占いアプリFortuneAppをリリースしました。下記のURLからダウンロードできます。</p>
-                                    <p>https://play.google.com/store/apps/details?id=jp.matsuura.fortuneapp</p>
+                                    <a href="https://play.google.com/store/apps/details?id=jp.matsuura.fortuneapp">https://play.google.com/store/apps/details?id=jp.matsuura.fortuneapp</a>
+                                    <br>
                                     <br>
                                     <h2>[公式LINEアカウント]</h2>
-                                    <p>LINE Messaging APIを活用したBot作成を行っております。リリースまでお待ちください。</p>
+                                    <p>LINE Messaging APIを活用したBot作成を2021年3月にリリース予定です。</p>
                                     <br>
                                     <h2>[iOS用アプリ]</h2>
-                                    <p>iOS向けアプリを2021年9月にリリース予定です。</p>
+                                    <p>顔認証を活用したiOS向けアプリを2021年9月にリリース予定です。</p>
                                     <br>
                                     <h2>[Youtube]</h2>
                                     <p>編集した動画を公開しています。</p>
-                                    <p>https://www.youtube.com</p>
+                                    <a href="https://www.youtube.com">https://www.youtube.com</a>
+                                    <br>
                                     <br>
                                     <h2>[Githubアカウント]</h2>
-                                    <p>今まで作成したプログラミングをGithubに公開しています。</p>
-                                    <p>https://github.com/matsuura1219</p>
+                                    <p>今まで作成したプログラムをGithubに公開しています。</p>
+                                    <a href="https://github.com/matsuura1219">https://github.com/matsuura1219</a>
+                                    <br>
                                     <br>
                                     <br>
                                 </div>
@@ -268,8 +275,8 @@
                 </div>
             </div>
             <!--左右の矢印ボタン-->
-            <div class="swiper-button-prev swiper-button-white"></div>
-            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white arrow-button"></div>
+            <div class="swiper-button-next swiper-button-white arrow-button"></div>
             <!--インジケータ-->
             <div class="swiper-pagination swiper-pagination-white"></div>
         </div>

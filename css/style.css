@@ -266,7 +266,6 @@ video {
         position: relative;
         height: 50px;
         color: white;
-        font-family: 'Spectral', serif;
         font-size: 30px;
     }
 }
@@ -412,7 +411,7 @@ a.btn-border:hover {
 /* 詳細ボタンを押下した際に表示するオーバーレイ */
 
 .detail_fadein {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -455,13 +454,15 @@ a.btn-border:hover {
 /* 詳細画面のレイアウト設定 */
 
 .detail_content {
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    width: 80%;
-    height: 80%;
-    background-color: aqua;
-    overflow-y: scroll;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    opacity: 0.9;
+    overflow-y: auto;
+    color: #fff;
 }
 
 
@@ -476,11 +477,11 @@ a.btn-border:hover {
 /* 閉じるボタンの設定 */
 
 .close {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 15px;
-    right: 15px;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: 30px;
+    right: 20px;
     z-index: 2000;
     cursor: pointer;
 }
@@ -492,7 +493,7 @@ a.btn-border:hover {
 @media screen and (max-width: 480px) {
     /* 480px以下に適用されるCSS（スマホ用） */
     .close {
-        position: absolute;
+        position: fixed;
         width: 35px;
         height: 35px;
         top: 10px;
@@ -505,7 +506,7 @@ a.btn-border:hover {
 .close_bar1 {
     position: absolute;
     top: 10px;
-    width: 40px;
+    width: 36px;
     height: 2px;
     background-color: rgb(255, 255, 255, 1);
     -webkit-transform: rotate(45deg) scaleX(1.0);
@@ -530,7 +531,7 @@ a.btn-border:hover {
 .close_bar2 {
     position: absolute;
     top: 10px;
-    width: 40px;
+    width: 36px;
     height: 2px;
     background-color: rgb(255, 255, 255, 1);
     -webkit-transform: rotate(-45deg) scaleX(1.0);
@@ -556,7 +557,7 @@ a.btn-border:hover {
 /* 詳細画面の中身の設定です */
 
 .content {
-    color: #000;
+    color: #fff;
     font-family: 'Spectral', serif;
 }
 
@@ -737,7 +738,7 @@ a.btn-border:hover {
     width: 100%;
     height: 100%;
     background-color: rgb(0, 0, 0, 0.7);
-    z-index: 500;
+    z-index: 100;
     visibility: hidden;
     /* 上下中央に寄せるおまじない */
     display: flex;
@@ -776,7 +777,7 @@ a.btn-border:hover {
     cursor: pointer;
     /* opacityを活用すると子要素にも影響を与えるため、rgbを使う */
     background: rgb(255, 255, 255, 0);
-    z-index: 100;
+    z-index: 120;
 }
 
 @media screen and (max-width: 959px) {
@@ -874,7 +875,7 @@ a.btn-border:hover {
 /* マウスオーバーの際のアクションを設定します */
 
 .menu_icon_animate {
-    background-color: aqua;
+    background-color: #fff;
 }
 
 

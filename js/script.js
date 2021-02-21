@@ -11,6 +11,9 @@ var overrlay = document.getElementsByClassName("overlay")[0];
 //矢印アイコン
 var arrows = document.getElementsByClassName("arrow-button");
 
+//インジケータ
+var indicator = document.getElementsByClassName("indicator")[0];
+
 //各menu_bar
 var menu_bar1 = document.getElementsByClassName("menu_bar1")[0];
 var menu_bar2 = document.getElementsByClassName("menu_bar2")[0];
@@ -188,8 +191,6 @@ function removeOpening() {
 //詳細画面を表示にする関数です
 function showDetail(page, e) {
 
-    console.log(page);
-
     if (!detail[page]) {
         //詳細画面が開いていない場合
         detail_page[page].classList.add("is-open");
@@ -254,7 +255,10 @@ function hideIcon() {
     for (let i = 0; i < 2; i++) {
         arrows[i].style.display = "none";
     }
-
+    indicator.style.display = "none"
+        //スライドを禁止します
+    mySwiper.allowSlidePrev = false;
+    mySwiper.allowSlideNext = false;
 
 }
 
@@ -268,6 +272,10 @@ function showIcon() {
     for (let i = 0; i < 2; i++) {
         arrows[i].style.display = "block";
     }
+    indicator.style.display = "block"
+        //スライド禁止を解除します
+    mySwiper.allowSlidePrev = true;
+    mySwiper.allowSlideNext = true;
 }
 
 /* イベント処理 */

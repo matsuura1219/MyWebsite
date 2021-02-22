@@ -49,8 +49,8 @@ var detail_page = document.getElementsByClassName("detail_fadein");
 //ハンバーガメニューが押されたかどうかを判定するフラグ（初期値はfalse=開いていない）
 var open = false;
 
-//各画面における、詳細画面を開いているかを判定するフラグ
-var detail = [false, false, false, false, false];
+//各画面における、詳細画面を開いているかを判定するフラグ（）
+var detail = [false, false, false, false, false, false, false];
 
 //表示しているページの位置
 var current_position = 1;
@@ -193,7 +193,7 @@ function showDetail(page, e) {
 
     if (!detail[page]) {
         //詳細画面が開いていない場合
-        detail_page[page].classList.add("is-open");
+        detail_page[page - 2].classList.add("is-open");
 
         detail[page] = true;
 
@@ -205,11 +205,15 @@ function showDetail(page, e) {
 //詳細画面を非表示にする関数です
 function removeDetail(page) {
 
+    console.log("remove");
+
     if (detail[page]) {
         //詳細画面が開いてる場合
-        detail_page[page].classList.remove("is-open");
+        detail_page[page - 2].classList.remove("is-open");
 
         detail[page] = false;
+
+        on_event(page, detail_page);
     }
 }
 
@@ -238,12 +242,14 @@ function myHandler(e) {
     e.preventDefault();
 }
 
+//クリックイベントの禁止を解除します
 function on_event(page, el) {
-    el[page].addEventListener("click", myHandler, false)
+    el[0].addEventListener("click", myHandler, false)
 }
 
+//クリックイベントを禁止します。
 function off_event(page, el) {
-    el[page].removeEventListener("click", myHandler, false)
+    el[0].removeEventListener("click", myHandler, false)
 }
 
 //詳細画面を表示する際にハンバーガーメニューと矢印アイコンを非表示にします
@@ -265,7 +271,6 @@ function hideIcon() {
 //詳細画面を表示する際にハンバーガーメニューと矢印アイコンを表示します
 function showIcon() {
 
-
     //ハンバーガーメニューを表示します
     menu_icon.style.display = "block";
     //矢印アイコンを表示します
@@ -276,6 +281,20 @@ function showIcon() {
         //スライド禁止を解除します
     mySwiper.allowSlidePrev = true;
     mySwiper.allowSlideNext = true;
+}
+
+//[MOREボタン]を非表示にします
+function hideButton() {
+
+    btn[0].style.visibility = "hidden";
+
+}
+
+//[MOREボタン]を表示します
+function showButton() {
+
+    btn[0].style.visibility = "visible";
+
 }
 
 /* イベント処理 */
@@ -324,6 +343,14 @@ overrlay.addEventListener("click", function() {
 mySwiper.on("slideChange", function() {
     //スワイプする画面のページ数を引数にします
     viewContent(mySwiper.realIndex + 1);
+
+    if (current_position == 1) {
+        //HOME画面の際は[MORE]ボタンを非表示にします
+        hideButton();
+    } else {
+        //それ以外は[MORE]ボタンを表示します
+        showButton();
+    }
 });
 
 
@@ -374,7 +401,7 @@ portfolio.addEventListener("click", function() {
 })
 
 
-
+/*
 //「MORE」ボタンを押したとき
 for (let i = 0; i <= 4; i++) {
 
@@ -392,22 +419,37 @@ for (let i = 0; i <= 4; i++) {
         ////////////////////////////////////
     });
 }
+*/
+
+//「MORE」ボタンを押したとき
+btn[0].addEventListener("click", (e) => {
+
+    console.log(current_position);
+    off_event(current_position, btn);
+    //home画面は「MORE」ボタンがない
+    //また、1ページ目を1と定義しているため、+2する
+    showDetail(current_position, e);
+
+    //ハンバーガーメニューを非表示にします
+    hideIcon();
+
+});
 
 
 //詳細画面の×ボタンを押したとき
-for (let i = 0; i <= 4; i++) {
+for (let i = 0; i <= 3; i++) {
     close_btn[i].addEventListener("click", () => {
 
         off_event(i, close_btn);
 
-        removeDetail(i);
+        removeDetail(current_position);
 
-        ////////////////////////////////////
         //ハンバーガーメニューを表示します
         showIcon();
-        ////////////////////////////////////
+
     });
 }
+
 
 
 //loadされたときに呼ばれる処理です
@@ -424,6 +466,8 @@ window.onload = function() {
     const message2_count = message2.length;
 
 
+    //最初の画面で[MORE]を非表示にします
+    hideButton()
 
     //本番用
 
@@ -458,65 +502,3 @@ window.onload = function() {
         opening.remove();
     }, delay2);
 }
-
-
-
-
-
-/*
-function button_event() {
-
-    if (show) {
-
-    } else {
-        //詳細画面を開いているとき
-        //詳細画面を開いていないとき
-        //body.classList.add("fade-in-bottom");
-        show = true;
-        $('.detail_fadein').addClass('is-open');
-
-    }
-}
-
-function button_event1() {
-
-    if (show_detail[1]) {
-
-    } else {
-        //詳細画面を開いているとき
-        //詳細画面を開いていないとき
-        //body.classList.add("fade-in-bottom");
-        show_detail[1] = true;
-        $('.detail_fadein').addClass('is-open');
-
-    }
-}
-
-close_btn[0].addEventListener("click", function() {
-
-    if (show) {
-        show = false;
-        $('.detail_fadein').removeClass('is-open');
-    }
-});
-
-close_btn[1].addEventListener("click", function() {
-
-    if (show_detail[1]) {
-        show_detail[1] = false;
-        $('.detail_fadein').removeClass('is-open');
-    }
-});
-
-
-btn_profile.addEventListener("click", function() {
-
-    button_event();
-});
-
-btn_research.addEventListener("click", function() {
-
-    button_event1();
-});
-
-*/

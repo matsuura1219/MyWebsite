@@ -96,9 +96,12 @@ video {
 
 /* ナビゲーションの文字を選択した場合のアクションを設定します */
 
+
+/*
 .overlay p:hover {
     color: aqua;
 }
+*/
 
 
 /* ナビゲーションの文字を中央に寄せる設定をします */
@@ -402,10 +405,13 @@ a.btn-border {
 
 /* 詳細ボタンのマウスオーバーの際の設定 */
 
+
+/*
 a.btn-border:hover {
     color: #000;
     background: #fff;
 }
+*/
 
 
 /* 詳細ボタンを押下した際に表示するオーバーレイ */
@@ -419,8 +425,6 @@ a.btn-border:hover {
     background: rgba(0, 0, 0, .7);
     opacity: 0;
     visibility: hidden;
-    transition: .3s linear;
-    transform: translateY(-100%);
     z-index: 1000;
 }
 
@@ -447,14 +451,13 @@ a.btn-border:hover {
 .detail_fadein.is-open {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
 }
 
 
 /* 詳細画面のレイアウト設定 */
 
 .detail_content {
-    position: relative;
+    position: absolute;
     top: 0%;
     left: 0%;
     width: 100%;
@@ -477,80 +480,90 @@ a.btn-border:hover {
 /* 閉じるボタンの設定 */
 
 .close {
-    position: fixed;
+    /* アイコン全体の幅 */
     width: 50px;
+    /* アイコン全体の高さ */
     height: 50px;
-    top: 30px;
+    /* 位置を一定にします */
+    position: fixed;
+    /* topと画面の距離を設定します */
+    top: 10px;
+    /* rightと画面の距離を設定します */
     right: 20px;
-    z-index: 2000;
+    /* カーソルを置いたときに、マウス表示を変更します*/
     cursor: pointer;
+    /* opacityを活用すると子要素にも影響を与えるため、rgbを使う */
+    background: rgb(255, 255, 255, 0);
+    z-index: 330;
 }
 
 @media screen and (max-width: 959px) {
-    .close {}
+    .close {
+        /* アイコン全体の幅 */
+        width: 50px;
+        /* アイコン全体の高さ */
+        height: 50px;
+        /* 位置を一定にします */
+        position: fixed;
+        /* topと画面の距離を設定します */
+        top: 15px;
+        /* rightと画面の距離を設定します */
+        right: 15px;
+        /* カーソルを置いたときに、マウス表示を変更します*/
+        cursor: pointer;
+        /* opacityを活用すると子要素にも影響を与えるため、rgbを使う */
+        background: rgb(255, 255, 255, 0);
+        z-index: 100;
+    }
 }
 
 @media screen and (max-width: 480px) {
     /* 480px以下に適用されるCSS（スマホ用） */
     .close {
+        /* アイコン全体の幅 */
+        width: 50px;
+        /* アイコン全体の高さ */
+        height: 50px;
+        /* 位置を一定にします */
         position: fixed;
-        width: 35px;
-        height: 35px;
-        top: 10px;
-        right: 10px;
-        z-index: 2000;
+        /* topと画面の距離を設定します */
+        top: 15px;
+        /* rightと画面の距離を設定します */
+        right: 15px;
+        /* カーソルを置いたときに、マウス表示を変更します*/
         cursor: pointer;
+        /* opacityを活用すると子要素にも影響を与えるため、rgbを使う */
+        background: rgb(0, 0, 255, 255);
+        z-index: 330;
     }
+}
+
+.close_bar {
+    /* バーそれぞれの幅 */
+    width: 36px;
+    /* バーそれぞれの高さ */
+    height: 2px;
+    /* 位置をmenu_icon内での絶対位置として定義します */
+    position: absolute;
+    /* アニメーションの時間 */
+    transition: all 0.3s;
+    opacity: 1;
 }
 
 .close_bar1 {
-    position: absolute;
-    top: 10px;
-    width: 36px;
-    height: 2px;
-    background-color: rgb(255, 255, 255, 1);
+    /* バーの色 */
+    background: white;
+    margin-left: 7px;
     -webkit-transform: rotate(45deg) scaleX(1.0);
-}
-
-@media screen and (max-width: 959px) {
-    .close_bar1 {}
-}
-
-@media screen and (max-width: 480px) {
-    /* 480px以下に適用されるCSS（スマホ用） */
-    .close_bar1 {
-        position: absolute;
-        top: 10px;
-        width: 30px;
-        height: 2px;
-        background-color: rgb(255, 255, 255, 1);
-        -webkit-transform: rotate(45deg) scaleX(1.0);
-    }
+    margin-top: 25px;
 }
 
 .close_bar2 {
-    position: absolute;
-    top: 10px;
-    width: 36px;
-    height: 2px;
-    background-color: rgb(255, 255, 255, 1);
+    /* バーの色 */
+    background-color: white;
+    margin-left: 7px;
     -webkit-transform: rotate(-45deg) scaleX(1.0);
-}
-
-@media screen and (max-width: 959px) {
-    .close_bar2 {}
-}
-
-@media screen and (max-width: 480px) {
-    /* 480px以下に適用されるCSS（スマホ用） */
-    .close_bar2 {
-        position: absolute;
-        top: 10px;
-        width: 30px;
-        height: 2px;
-        background-color: rgb(255, 255, 255, 1);
-        -webkit-transform: rotate(-45deg) scaleX(1.0);
-    }
+    margin-top: 25px;
 }
 
 

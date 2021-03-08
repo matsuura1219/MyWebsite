@@ -46,6 +46,29 @@ img {
 }
 
 
+/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+
+.pc {
+    display: block !important;
+}
+
+.sp {
+    display: none !important;
+}
+
+
+/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+
+@media only screen and (max-width: 480px) {
+    .pc {
+        display: none !important;
+    }
+    .sp {
+        display: block !important;
+    }
+}
+
+
 /* videoタグ */
 
 video {
@@ -360,8 +383,8 @@ video {
     text-align: center;
     cursor: pointer;
     font-size: 25px;
+    z-index: 10;
     font-family: 'Spectral', serif;
-    z-index: 1000;
 }
 
 @media screen and (max-width: 959px) {
@@ -666,7 +689,7 @@ a.btn-border:hover {
 /* 詳細画面内のulタグの設定です */
 
 .text_area ul {
-    font-size: 16px;
+    font-size: 18px;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -688,7 +711,7 @@ a.btn-border:hover {
 /* 詳細画面内のaタグの設定です */
 
 .text_area a {
-    font-size: 16px;
+    font-size: 18px;
     padding-left: 30px;
     padding-right: 30px;
 }

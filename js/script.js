@@ -69,7 +69,7 @@ const portfolio_position = 5;
 //アニメーションする文字の高さ
 const height_chr = 50;
 //最初に表示する文章
-const message1 = "Hello Everyone";
+const message1 = "Welcome To My Website";
 //最後に表示する文章
 const message2 = "My Name Is Yuki Matsuura";
 
@@ -136,11 +136,14 @@ function restoreShape() {
 //ナビゲーションを表示するオーバーレイを行う関数です
 function showOverlay() {
     overrlay.classList.add("overlay_off");
+
+
 }
 
 //ナビゲーションを表示するオーバーレイを解除する関数です
 function removeOverlay() {
     overrlay.classList.remove("overlay_off");
+
 }
 
 //文字アニメーションの位置を変更する関数です
@@ -287,6 +290,7 @@ function showIcon() {
 function hideButton() {
 
     btn[0].style.visibility = "hidden";
+    //btn[0].style.zIndex = -1;
 
 }
 
@@ -294,6 +298,7 @@ function hideButton() {
 function showButton() {
 
     btn[0].style.visibility = "visible";
+    //btn[0].style.zIndex = 1000;
 
 }
 
